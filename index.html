@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
     <header>
         <div class="container mx-auto p-5">
@@ -30,19 +32,46 @@
             <section>
                 <div class="max-w-[850px] mx-auto p-10 text-center space-y-8">
                     <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold">Apple Iphone 13 Pro Max</h1>
-                    <p class="text-base lg:text-lg">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou.</p>
+                    <p class="text-base lg:text-lg">There are many variations of passages of Lorem Ipsum available, but
+                        the majority have suffered alteration in some form, by injected humou.</p>
                     <button class="btn btn-primary text-base font-bold">Buy Now</button>
                     <img class="w-auto mx-auto" src="./images/banner.png" alt="Banner">
                 </div>
             </section>
         </div>
     </header>
-    <main>
-
+    <main class="container mx-auto p-5 mb-40">
+        <section>
+            <div class="text-center space-y-8">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Search your phone</h2>
+                <div class="w-full md:w-[80%] lg:w-[60%] h-[60px] mx-auto bg-blue-50 rounded-full flex">
+                    <input id="search_input"
+                        class="ps-5 flex-1 rounded-tl-full rounded-bl-full bg-transparent focus-visible:outline-none"
+                        type="text" placeholder="Type phone name">
+                    <button id="search_btn" onclick="searchFunctionality()"
+                        class="h-auto w-32 bg-blue-400 rounded-tr-full rounded-br-full text-lg text-white font-bold hover:bg-blue-500 duration-300">Search</button>
+                </div>
+            </div>
+            <div id="loading_spinner" class="text-center mt-10 hidden">
+                <span class="loading loading-lg loading-spinner text-primary"></span>
+            </div>
+            <div id="phone_container" class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
+            </div>
+            <div id="show_btn_container" class="mt-10 text-center hidden">
+                <button id="show_btn" onclick="handleShowAll()" class="btn btn-primary font-bold">Show All</button>
+            </div>
+            <!-- Show Modal -->
+            <dialog id="show_modal" class="modal modal-bottom sm:modal-middle">
+                <div id="modal_box" class="modal-box">
+                   
+                </div>
+            </dialog>
+        </section>
     </main>
     <footer>
 
     </footer>
     <script src="./js/script.js"></script>
 </body>
+
 </html>
